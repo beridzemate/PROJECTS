@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4ff744a237.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/Htmlphoto.jpg">
+    <title>GameMastermind</title>
+    <style>
+        body {
+            background-size: cover;
+            height: 100vh;
+            font-family: sans-serif;
+            background-image:url("./assets/game.jpg") ;
+        }
+
+        .nav-ul ul {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .nav-ul input[type="checkbox"]:checked + ul {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .nav-ul li {
+            transition: transform 0.3s ease;
+            animation: fadeInUp 0.5s ease;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        .nav-ul li:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-ul li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-ul li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="top-nav">
+        <p>Shipping At Georgia</p>
+        <h1>Gaming accessories</h1>
+        <button>CART (0)</button>
+    </div>
+    <hr>
+    <button onclick="window.location.href='index.html'">go back</button>
+    <div class="bottom-nav">
+        <i class="fas fa-bars"></i>
+        <ul class="nav-ul">
+            <li>
+                <span>mouse</span>
+                <input type="checkbox" id="mouses">
+                <ul>
+                    <li><a href="#">Razer</a></li>
+                    <li><a href="#">Genesis</a></li>
+                    <li><a href="#">Logitech</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>headphones</span>
+                <input type="checkbox" id="headphones">
+                <ul>
+                    <li><a href="#">sony</a></li>
+                    <li><a href="#">Jbl</a></li>
+                    <li><a href="#">Logitech</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>keyboards</span>
+                <input type="checkbox" id="keyboards">
+                <ul>
+                    <li><a href="#">Razer</a></li>
+                    <li><a href="#">hyperX</a></li>
+                    <li><a href="#">Genesis</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>accessories</span>
+                <input type="checkbox" id="accessories">
+                <ul>
+                    <li><a href="#">MousePad</a></li>
+                    <li><a href="#">dynamic</a></li>
+                    <li><a href="#">Camera</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>The Journal</span>
+                <input type="checkbox" id="accessories">
+                <ul>
+                    <li><a href="#">MousePad</a></li>
+                    <li><a href="#">dynamic</a></li>
+                    <li><a href="#">Camera</a></li>
+                </ul>
+            </li>
+        </ul>
+        <i class="fas fa-search"></i>
+    </div>
+</nav>
+<footer>
+    <a href="https://policies.google.com/privacy?hl=ru-GE&fg=1" target="_blank"></a>
+</footer>
+
+
+
+
+</body>
+</html>
+
+

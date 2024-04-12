@@ -1,0 +1,145 @@
+<!-- <!-- <!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paragraphs</title>
+</head>
+<body>
+
+<p id="para1">This is the first paragraph.</p>
+<p id="para2">This is the second paragraph.</p>
+
+
+<script>
+  let secondParagraph = document.getElementById("para1");
+  console.log(secondParagraph.textContent);
+
+
+  let firstParagraph = document.getElementById("para2");
+  firstParagraph.textContent = "This is the modified first paragraph.";
+  alert ="This  is the modified first paragraph.";
+  console.log(firstParagraph.textContent);  
+</script>
+
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Change h1 Value</title>
+</head>
+<body>
+    <h1 id="heading">Original Heading</h1>
+
+    <script>
+    
+        let h1Element = document.getElementById('heading');
+
+ 
+        h1Element.innerText = 'GOA';
+
+   
+        alert(h1Element.innerText);
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Paragraph Style</title>
+<style>
+  /* CSS for the paragraph */
+  p {
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    width: fit-content;
+  }
+</style>
+</head>
+<body>
+
+
+<p id="myParagraph">paragraph</p>
+
+
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+function changeStyle() {
+
+  let paragraph = document.getElementById("myParagraph");
+  
+
+  paragraph.style.color = "blue";
+  paragraph.style.border = "2px solid blue"; 
+}
+</script>
+
+</body>
+</html>
+  -->
+
+
+
+<!-- <p id="name1">mate</p>
+<p id="name2">nika</p>
+<p id="name3">gio</p>
+<p id="name4">mari</p>
+<p id="name5">nini</p>
+
+<script>
+  function() {
+    const mate = ('name1').text();
+     const nini =('name5').text();
+  }
+
+  console.log("mate:", mate)
+  console.log("nini:", nini)
+</script> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swap Text</title>
+</head>
+<body>
+
+<p id="firstParagraph">pirveli paragrapi</p>
+<p id="secondParagraph">meore paragrapi</p>
+<button onclick="swapText()">Swap Text</button>
+
+<script>
+function swapText() {
+
+    let pirveliParagrapi = document.getElementById("pirveliParagrapi");
+    let meoreParagrapi = document.getElementById("meoreParagrapi");
+    
+
+    let tempText = .textContent; 
+    
+  
+  pirveliParagrapi.textContent = tempText;
+    
+    
+pirveliParagrapi.textContent = meoreParagrapi.textContent;
+}
+
+</script>
+
+</body>
+</html> -->
