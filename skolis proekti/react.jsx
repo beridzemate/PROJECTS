@@ -1,4 +1,3 @@
-// WaterErosion.jsx
 import React, { useState } from 'react';
 
 const Card = ({ title, text, onClick, className }) => (
@@ -9,7 +8,7 @@ const Card = ({ title, text, onClick, className }) => (
 );
 
 const WaterErosion = () => {
-  // Component logic here
+ 
 };
 
 export default WaterErosion;
