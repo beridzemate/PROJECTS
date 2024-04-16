@@ -111,12 +111,103 @@
   
 
 
-var count = 0;
+// var count = 0;
 
 
-while (count < 0) {
-    console.log("fr");
-    count++;
+// while (count < 0) {
+//     console.log("fr");
+//     count++;
+// }
+
+
+
+
+class BankAccount {
+    constructor(accountNumber, balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
+        return this.balance;
+    }
+
+    withdraw(amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+            return this.balance;
+        } else {
+            throw new Error("Insufficient funds");
+        }
+    }
+
+    transfer(recipient, amount) {
+        if (this.balance >= amount) {
+            this.balance -= amount;
+            recipient.balance += amount;
+            return this.balance;
+        } else {
+            throw new Error("Insufficient funds");
+        }
+    }
 }
 
+function authenticate(username, password) {
+    // Simulated authentication, replace with actual authentication logic
+    if (username === "user123" && password === "password123") {
+        return true;
+    } else {
+        return false;
+    }
+}
 
+function performTransaction() {
+    const readline = require('readline');
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    rl.question("Enter your username: ", (username) => {
+        rl.question("Enter your password: ", (password) => {
+            if (authenticate(username, password)) {
+                // Simulated account details, replace with database query
+                const userAccount = new BankAccount("123456789", 1000);
+                const recipientAccount = new BankAccount("987654321", 500);
+
+                rl.question("Enter the amount: ", (amountInput) => {
+                    const amount = parseFloat(amountInput);
+                    rl.question("Enter 'D' for deposit, 'W' for withdrawal, or 'T' for transfer: ", (choice) => {
+                        choice = choice.toUpperCase();
+
+                        try {
+                            if (choice === "D") {
+                                userAccount.deposit(amount);
+                                console.log("Deposit successful. New balance:", userAccount.balance);
+                            } else if (choice === "W") {
+                                userAccount.withdraw(amount);
+                                console.log("Withdrawal successful. New balance:", userAccount.balance);
+                            } else if (choice === "T") {
+                                userAccount.transfer(recipientAccount, amount);
+                                console.log("Transfer successful. New balance:", userAccount.balance);
+                            } else {
+                                console.log("Invalid choice");
+                            }
+                        } catch (error) {
+                            console.log("Error:", error.message);
+                        }
+
+                        rl.close();
+                    });
+                });
+            } else {
+                console.log("Authentication failed");
+                rl.close();
+            }
+        });
+    });
+}
+
+// Example usage
+performTransaction();
