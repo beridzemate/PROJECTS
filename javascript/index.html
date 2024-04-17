@@ -143,3 +143,45 @@ pirveliParagrapi.textContent = meoreParagrapi.textContent;
 
 </body>
 </html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <script>
+        function arithmeticOperations(number) {
+            if (typeof number !== 'number') {
+                throw new Error('The parameter must be a number');
+            }
+
+            const multiplicationByTwo = number * 2;
+            const divisionByTwo = number / 2;
+            const squaring = Math.pow(number, 2);
+
+            return {
+                multiplicationByTwo,
+                divisionByTwo,
+                squaring
+            };
+        }
+
+        function performOperations() {
+            const numberInput = document.getElementById('numberInput').value;
+            const number = parseFloat(numberInput);
+
+            const results = arithmeticOperations(number);
+            document.getElementById('results').innerText = JSON.stringify(results, null, 2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Arithmetic Operations</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="text" id="numberInput">
+    <button onclick="performOperations()">Perform Operations</button>
+    <div id="results"></div>
+</body>
+</html>
