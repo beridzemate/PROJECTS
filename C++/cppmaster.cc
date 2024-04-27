@@ -17,6 +17,7 @@ constexpr bool IsSame() {
   return (std::is_same<Type1, Type2>::value);
 }
 
+
 struct IdentityFactory {
   template <typename Callback>
   static Callback AsCallback(Callback callback) {
