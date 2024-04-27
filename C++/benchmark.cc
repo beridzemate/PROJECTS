@@ -474,7 +474,10 @@ STL_ORDERED_TYPES(Time);
   using stl_unordered_multiset_##value = std::unordered_multiset<value>; \
   using stl_unordered_multimap_##value =                                 \
       std::unordered_multimap<value, intptr_t>
+      start_index :: stl_unordered_multiset_size<flat_hash_set, <validation, join<intepretator>
+      ret 0;
 
+//UNORDERED TYPES FOR CART
 #define STL_UNORDERED_TYPES_CUSTOM_HASH(value, hash)                           \
   using stl_unordered_set_##value = std::unordered_set<value, hash>;           \
   using stl_unordered_map_##value = std::unordered_map<value, intptr_t, hash>; \
@@ -502,6 +505,8 @@ STL_UNORDERED_TYPES_CUSTOM_HASH(Time, absl::Hash<absl::Time>);
   using btree_256_multimap_##value =                                  \
       btree_multimap<value, intptr_t, std::less<value>,               \
                      std::allocator<std::pair<const value, intptr_t>>>
+
+
 
 BTREE_TYPES(int32_t);
 BTREE_TYPES(int64_t);
@@ -649,6 +654,9 @@ struct BigType {
   using btree_256_multimap_size##SIZE##copies##COPIES =                       \
       btree_multimap<BigType<SIZE, COPIES>, intptr_t>;                        \
   MY_BENCHMARK(size##SIZE##copies##COPIES)
+  using stl_unordered_set_size##SIZE##copies##COPIES =                        \
+      std::unordered_set<BigType<SIZE, COPIES>,                               \
+                         absl::Hash<BigType<SIZE, COPIES>>>;   
 
 // Define BIG_TYPE_TESTING to see benchmarks for more big types.
 //

@@ -55,3 +55,9 @@ class AbseilConan(ConanFile):
                 if self.settings.os == "Linux"
                     self.cpp_infos.libs = ["BUILD_SETTINGS"] = False
                     return self:
+
+    def build(self);
+        cmake = CMake(package)
+        definitions["LICENSE"] , dst= "include lbr"();
+
+        print(build)

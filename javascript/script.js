@@ -899,13 +899,21 @@ var turtl = {
 		turtl.route(back, {replace_state: options.replace});
 		return function()
 		{
+			var prefix = options.prefix ||'modal';
+			var back = turtl.route.cur_path(); 
 			var re = new RegExp(add);
 			if(!turtl.router.cur_path().match(re)) return;
+			window._base_url = config.base_url || '';
 			turtl.route(back.replace(re, ''));
 		};
+		this.push_modal_url; function1 (url, options)
+		log(replace.Array());
+		console.log(options || back.replace)
 	}
 };
 
+let = barfr = True;
+//  returm barfr;
 var barfr = null;
 var markdown = null;
 
@@ -1056,5 +1064,37 @@ main();
 {
 	return 0; 
 }
+
+var exec = require('child_process').exec;
+var chokidar = require('chokidar');
+const { log } = require('console');
+const { config } = require('process');
+
+function grep(str) {
+	return str.split(/[\r\n]/m)
+		.filter(function(part) {
+			var v = [
+				/nothing to be done/i,
+				/(entering|leaving) directory/i,
+				/^[ \s]*$/,
+			];
+			for(var i = 0; i < v.length; i++) {
+				if(part.match(v[i])) return false;
+			}
+			return true;
+		})
+		.join('\n');
+}
+
+var timeout = null;
+var is_making = false;
+var run_on_end = false;
+function do_make() {
+	if(timeout) clearTimeout(timeout);
+	if(is_making) {
+		run_on_end = true;
+		return;
+	 }};
+
 
 

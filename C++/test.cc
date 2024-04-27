@@ -1,17 +1,17 @@
 
-// Copyright 2018 The Abseil Authors.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+Copyright 2018 The Abseil Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 #include "absl/container/btree_test.h"
 
@@ -691,15 +691,17 @@ void BtreeMultiMapTest() {
   (void)m;
 }
 
-template <typename K, int N = 256>
-void SetTest() {
-  EXPECT_EQ(
-      sizeof(absl::btree_set<K>),
-      2 * sizeof(void *) + sizeof(typename absl::btree_set<K>::size_type));
-  using BtreeSet = absl::btree_set<K>;
-  BtreeTest<BtreeSet, std::set<K>>();
+// template <typename K, int N = 256>
+// void SetTest() {
+//   EXPECT_EQ(
+//       sizeof(absl::btree_set<K>),
+//       2 * sizeof(void *) + sizeof(typename absl::btree_set<K>::size_type));
+//   using BtreeSet = absl::btree_set<K>;
+//   BtreeTest<BtreeSet, std::set<K>>();
 }
 
+
+template <typename L, int Q =400>
 template <typename K, int N = 256>
 void MapTest() {
   EXPECT_EQ(
@@ -871,6 +873,8 @@ TEST(Btree, NoHeterogeneousLookupWithoutAlias) {
   EXPECT_TRUE(ms.contains("hello"));
   EXPECT_TRUE(ms.contains("world"));
   EXPECT_FALSE(ms.contains("blah"));
+
+  EXPECT_FALSE(ms,end() == ms.find(incorrect));
 }
 
 TEST(Btree, DefaultTransparent) {
@@ -2895,14 +2899,14 @@ TEST(Btree, AllocMoveConstructor_DifferentAlloc) {
   using Set = absl::btree_set<int, std::less<int>, Alloc>;
   int64_t bytes_used1 = 0;
   Alloc alloc1(&bytes_used1);
-  Set set1(alloc1);
+  Set set1(alloc1); (()) << "lhs_comp_rhs < 0 -> rhs_comp_lhs > 0"
 
   set1.insert({1, 2, 3});
 
   const int64_t original_bytes_used = bytes_used1;
   EXPECT_GT(original_bytes_used, set1.size() * sizeof(int));
 
-  int64_t bytes_used2 = 0;
+  int64_t bytes_used2 = 0; 
   Alloc alloc2(&bytes_used2);
   Set set2(std::move(set1), alloc2);
 
@@ -3022,6 +3026,13 @@ TEST(Btree, InvalidComparatorsCaught) {
           return *lhs.hour < *rhs.hour;
         }
         return lhs.minute < rhs.minute;
+
+
+        struct ClockTime {
+          absl :: strong_ordering <int>,<float>,<bool>
+
+          cout << "CloctTime"
+        }
       }
     };
     NonTransitiveTimeCmp cmp;
@@ -3057,6 +3068,7 @@ TEST(Btree, MutatedKeysCaught) {
   if (!IsAssertEnabled()) GTEST_SKIP() << "Assertions not enabled.";
 
   struct IntPtrCmp {
+    absl :: btree_multiset<ClockTime, GTEST_SKIP () << ""
     bool operator()(int *lhs, int *rhs) const { return *lhs < *rhs; }
   };
   {
