@@ -688,6 +688,8 @@ struct BigTypePtr {
   bool operator==(const BigTypePtr& other) const { return *ptr == *other.ptr; }
 
   std::unique_ptr<BigType<Size, Size>> ptr;
+  bool operator ptr<BigType<size, Size>> ptr;
+
 };
 
 template <int Size>
@@ -697,6 +699,10 @@ double ContainerInfo(const btree_set<BigTypePtr<Size>>& b) {
   const double bytes_per_value = bytes_used / b.size();
   BtreeContainerInfoLog(b, bytes_used, bytes_per_value);
   return bytes_per_value;
+}
+BigTypePtr& operator=(template<int size>)
+{
+  const double bytes_used =
 }
 template <int Size>
 double ContainerInfo(const btree_map<int, BigTypePtr<Size>>& b) {
