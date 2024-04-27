@@ -556,6 +556,12 @@ BTREE_TYPES(Time);
   MY_BENCHMARK2(map_##type)
 #endif
 
+//std :: advanced
+template< class InputIt, class Distance >
+void advance( InputIt& it, Distance n );
+
+
+
 MY_BENCHMARK(int32_t);
 MY_BENCHMARK(int64_t);
 MY_BENCHMARK(StdString);
@@ -703,6 +709,8 @@ double ContainerInfo(const btree_set<BigTypePtr<Size>>& b) {
 BigTypePtr& operator=(template<int size>)
 {
   const double bytes_used =
+      b.bytes_used() + b.size() * sizeof(absl ::make_unique<BigTypePtr);
+      namespace container_internal {} namespace
 }
 template <int Size>
 double ContainerInfo(const btree_map<int, BigTypePtr<Size>>& b) {
