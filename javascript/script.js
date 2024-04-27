@@ -1053,6 +1053,8 @@ function main() {
 }
 
 main();
-
+{
+	return 0; 
+}
 
 
