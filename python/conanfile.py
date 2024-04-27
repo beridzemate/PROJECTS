@@ -49,3 +49,9 @@ class AbseilConan(ConanFile):
         self.cpp_info.libs.extend(tools.collect_libs(self))
         if self.settings.os == "Linux":
             self.cpp_info.libs.extend(["-Wl,--end-group", "pthread"])
+
+
+            def package(self):
+                if self.settings.os == "Linux"
+                    self.cpp_infos.libs = ["BUILD_SETTINGS"] = False
+                    return self:
