@@ -1015,7 +1015,7 @@ function do_make() {
 	if(is_making) {
 		run_on_end = true;
 		return;
-	}
+	 }
 	timeout = setTimeout(function() {
 		timeout = null;
 		is_making = true;
