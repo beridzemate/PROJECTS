@@ -127,6 +127,15 @@ TYPED_TEST(CleanupTest, CTADProducesCorrectType) {
     static_assert(IsSame<absl::Cleanup<Tag, void (*)()>, decltype(cleanup)>(),
                   "");
   }
+{
+  static_assert cleanup_internal = FnPtrFunction;
+  
+static_assert(IsSame<absl::Cleanup<Tag), void (*)()>, (CTADProducesCorrectType);
+
+
+
+
+}
 }
 
 TYPED_TEST(CleanupTest, FactoryAndCTADProduceSameType) {
