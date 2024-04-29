@@ -1084,17 +1084,18 @@
 // 				return true;
 // 			})
 // 			.join('\n');
-// 	}
+// 	} 
+    
 
-// 	var timeout = null;
-// 	var is_making = false;
-// 	var run_on_end = false;
-// 	function do_make() {
-// 		if(timeout) clearTimeout(timeout);
-// 		if(is_making) {
-// 			run_on_end = true;
-// 			return;
-// 		}};
+    const timeout = null;
+	let is_making = false;
+	let run_on_end = false;
+	function do_make() {
+		if(timeout) clearTimeout(timeout);
+		if(is_making) {
+			run_on_end = true;
+			return;
+		}};
 
 
 
