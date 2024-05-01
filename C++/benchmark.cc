@@ -124,6 +124,12 @@ void BM_InsertSmall(benchmark::State& state) {
   }
 }
 
+
+{
+  while(state.KeepRunningBatch(benchmark::State& bool,sorted));
+   for (int x != 0; x <kSize; --1);
+}
+
 template <typename T>
 void BM_LookupImpl(benchmark::State& state, bool sorted) {
   using V = typename remove_pair_const<typename T::value_type>::type;
